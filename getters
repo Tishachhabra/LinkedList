@@ -1,0 +1,38 @@
+public T getFirst() throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		return head.data;
+	}
+	public T getLast() throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		return tail.data;
+	}
+	public T getAt(int index) throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		if(index>size || index<1)
+			throw new Exception("INdex invalid");
+		Node temp=head;
+		for(int i=1;i<index;i++)
+		{
+			temp=temp.next;
+		}
+		return temp.data;
+	}
+	public Node getNodeAt(int index) throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		if(index>size || index<1)
+			throw new Exception("INdex invalid");
+		Node temp=head;
+		for(int i=1;i<index;i++)
+		{
+			temp=temp.next;
+		}
+		return temp;
+	}
