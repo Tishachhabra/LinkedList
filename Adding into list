@@ -1,0 +1,28 @@
+public void addLast(T item)
+	{
+		Node nn=new Node();
+		nn.data=item;
+		
+		if(size>0)
+			tail.next=nn;
+		if(size==0)
+			head=tail=nn;
+		else
+			tail=tail.next;
+		size++;
+	}
+	public void addFirst(T item)
+	{
+		Node nn=new Node();
+		nn.data=item;
+		
+		if(size>0)
+			nn.next=head;
+		
+		if(size==0)
+			head=tail=nn;
+		else
+			head=nn;
+	
+		size++;
+	}
