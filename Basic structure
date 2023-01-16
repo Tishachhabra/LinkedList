@@ -1,0 +1,28 @@
+public class LinkedList <T>
+{
+	private class Node
+	{
+		T data;
+		Node next;
+	}
+	private Node head;					
+	private Node tail;
+	private int size;
+
+	public void display()
+	{
+		Node temp=head;					
+		while(temp!=null)
+		{
+			System.out.print(temp.data+", ");
+			temp=temp.next;
+		}
+		System.out.println();
+	}
+	public boolean isEmpty()
+	{
+		if(size==0)
+		return true;
+		return false;
+	}
+}
