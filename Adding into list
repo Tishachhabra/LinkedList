@@ -26,3 +26,23 @@ public void addLast(T item)
 	
 		size++;
 	}
+	public void addAt(int index,T item) throws Exception
+	{
+		if(index<1 || index>size+1)
+			throw new Exception("index invalid");
+		if(index==1)
+			addFirst(item);
+		if(index==size+1)
+			addLast(item);
+		
+		Node nn=new Node();
+		nn.data=item;
+		
+		Node temp=head;
+		for(int i=1;i<index-1;i++)
+		{
+			temp=temp.next;
+		}
+		nn.next=temp.next;
+		temp.next=nn;
+	}
