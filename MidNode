@@ -1,0 +1,7 @@
+public T midNode() throws Exception
+	{
+		if(size%2==0)
+			return getAt(size/2);
+		else
+			return getAt(size/2 +1);
+	}
