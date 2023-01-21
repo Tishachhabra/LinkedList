@@ -1,0 +1,55 @@
+public T removeFirst() throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		
+		T save=head.data;
+		if(size==1)
+			head=tail=null;
+		else
+			head=head.next;
+		size--;
+		return save;
+	}
+	public T removeLast() throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		
+		T save=tail.data;
+		if(size==1)
+			head=tail=null;
+		else
+			{
+				Node temp=head;
+				for(int i=1;i<size-1;i++)
+				{
+					temp=temp.next;
+				}
+				temp.next=null;
+				tail=temp;
+			}
+		size--;
+		return save;	
+	}
+	public T removeAt(int index) throws Exception
+	{
+		if(size==0)
+			throw new Exception("LL is empty");
+		if(index==1)
+			return removeFirst();
+		else if (index==size)
+			return removeLast();
+		else
+		{
+			Node temp=head;
+			for(int i=1;i<index-1;i++)
+			{
+				temp=temp.next;
+			}
+			T save=temp.next.data;
+			temp.next=temp.next.next;
+			size--;
+			return save;
+		}
+	}
